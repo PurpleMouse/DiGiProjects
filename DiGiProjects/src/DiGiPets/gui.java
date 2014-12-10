@@ -8,8 +8,8 @@ public class gui extends JFrame{
 	private Container conts;
 	private BorderLayout bl;
 	private JPanel top,mid,bot;
-	private JButton stb,lb;
-	private JButton qtb, pb;
+	private JButton startBtn,loadBtn;
+	private JButton quitBtn, pauseBtn;
 	public gui(String n){//yeh dis default kinda
 		super("DIGI pets - "+n);
 		conts = getContentPane();
