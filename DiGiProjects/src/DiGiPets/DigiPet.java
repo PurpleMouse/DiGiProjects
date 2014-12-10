@@ -11,10 +11,10 @@ public class DigiPet {
 		name = "";
 		invt = new Obj[19];//Max 20
 		skills = new Skill[99];//Max 100 skills
-	}//yesh
+	}
 	public void setName(String n){
 		name = n;
-	}//changed
+	}
 	public void levelUp(){
 		//on level up
 		//gain random item
