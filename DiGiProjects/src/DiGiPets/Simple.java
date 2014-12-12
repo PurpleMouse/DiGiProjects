@@ -2,7 +2,7 @@ package DiGiPets;
 
 public class Simple {
 	public void inti(){
-		//start menu
+		//start menqeu
 	}
 		//cool
 	public static void main(String[] args) {

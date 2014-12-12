@@ -1,18 +1,23 @@
 package DiGiPets;
 
-import java.awt.*;
-
 import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.*;
+
+
 
 public class gui extends JFrame{
 	private Container conts;
 	private BorderLayout bl;
 	private JPanel top,mid,bot;
 	private JButton startBtn,loadBtn, quitBtn;
+	ButtonHandler bh;
 	public gui(String n){//yeh dis default kinda
 		super("DIGI pets - "+n);
 		conts = getContentPane();
 		bl = new BorderLayout();
+		bh = new ButtonHandler();
 		top = new JPanel();
 		mid = new JPanel();
 		bot = new JPanel();
@@ -30,6 +35,9 @@ public class gui extends JFrame{
 		conts.add(top, bl.NORTH);
 		conts.add(mid, bl.CENTER);
 		conts.add(bot, bl.SOUTH);
+		startBtn.addActionListener(bh);
+		loadBtn.addActionListener(bh);
+		quitBtn.addActionListener(bh);
 		startBtn.setBounds(230, 200, 350, 70);
 		loadBtn.setBounds(230, 300, 350, 70);
 		quitBtn.setBounds(230, 400, 350, 70);
@@ -37,10 +45,39 @@ public class gui extends JFrame{
 		mid.add(loadBtn);
 		mid.add(quitBtn);
 	 }
-	 public void intistart(){
+	 public void initstart(){
+		 this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 		 //start game gui
 	 }
-	 public void intiload(){
+	 public void initload(){
+		 this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 		 //start load gui
 	 }
+	 public void doquit(){
+		 //quits game
+		 if(JOptionPane.showConfirmDialog(this.getParent(), "Would you like to quit the game?") == JOptionPane.YES_OPTION)
+			 System.exit(0);
+		 else
+			 return;
+	 }
+	 private class ButtonHandler implements ActionListener{//When the button is clicked
+			public void actionPerformed( ActionEvent ae ){
+				if (ae.getSource() == startBtn){
+					//close first
+					initstart();//then
+					
+				}
+				if(ae.getSource() == loadBtn){
+					//close first
+					initload();//then
+					
+					
+					
+				}
+				if(ae.getSource() == quitBtn){
+					doquit();
+				}
+			} 
+		} 
+
 }
