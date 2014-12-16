@@ -12,9 +12,8 @@ public class gui extends JFrame{
 	private BorderLayout bl;
 	private JPanel top,mid,bot;
 	private JButton startBtn,loadBtn, quitBtn;
-	ButtonHandler bh;
-	public gui(String n){//yeh dis default kinda
-		super("DIGI pets - "+n);
+	private ButtonHandler bh;
+	public gui(){//yeh dis default kinda
 		conts = getContentPane();
 		bl = new BorderLayout();
 		bh = new ButtonHandler();
@@ -31,6 +30,7 @@ public class gui extends JFrame{
 	 }
 	public void initmen(){
 		 //start menu gui
+		this.setTitle("DiGi Pets - Main Menu");
 		mid.setLayout(null);
 		conts.add(top, bl.NORTH);
 		conts.add(mid, bl.CENTER);
@@ -46,12 +46,19 @@ public class gui extends JFrame{
 		mid.add(quitBtn);
 	 }
 	 public void initstart(){
-		 this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+		 clean();
+		 this.setTitle("DiGi Pets - Game");
 		 //start game gui
+		 
 	 }
 	 public void initload(){
-		 this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+		 clean();
+		 this.setTitle("DiGi Pets - Load Game");
 		 //start load gui
+	 }
+	 public void clean(){
+		 conts.removeAll();
+		 conts.repaint();
 	 }
 	 public void doquit(){
 		 //quits game
