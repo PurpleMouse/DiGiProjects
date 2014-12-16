@@ -1,24 +1,24 @@
 package DiGiPets;
 
-public enum Skill 
+public enum Items 
 {
-	//Test Skills
-	Wave("Waves to screen", "Social"),
-	Bow("Bows to screen", "Social");
+	//Test Items
+	Hat("Hat to wear", "Clothing"),
+	Shirt("Shirt to wear", "Clothing");
 	
-	//Skill information variables
+	//Items information variables
 	private final String desc;
 	private final String type;
 	
-	//Skill enum constructor
-	Skill(String Description, String skillType)
+	//Items enum constructor
+	Items(String Description, String skillType)
 	{
 		desc = Description;
 		type = skillType;
 	}
 	
 	/*
-	 * Skill information Accessors
+	 * Items information Accessors
 	 */
 	public String getDesc()
 	{
