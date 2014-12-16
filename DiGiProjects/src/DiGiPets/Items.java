@@ -1,28 +1,25 @@
 package DiGiPets;
 
-import java.io.File;
+import javax.swing.ImageIcon;
 
 public enum Items 
 {
-	
-	
 	//Test Items
-	Hat("Hat to wear", "Clothing", new File ("Item_Icons/hat.png")),
-	Shirt("Shirt to wear", "Clothing", new File ("Item_Icons/shirt.png"));
+	Hat("Hat to wear", "Clothing", new ImageIcon(Object.class.getResource("Item_Icons/hat.png"))),
+	Shirt("Shirt to wear", "Clothing", new ImageIcon(Object.class.getResource("Item_Icons/shirt.png")));
 	
 
 	
-	//Items information variables
-	private final String desc;
-	private final String type;
-	private final File icon;
+	private final String desc;//item description
+	private final String type;//item type
+	private final ImageIcon icon;//item icon file
 	
 	//Items enum constructor
-	Items(String Description, String skillType, File iconFile)
+	Items(String Description, String skillType, ImageIcon imageIcon)
 	{
 		desc = Description;
 		type = skillType;
-		icon = iconFile;
+		icon = imageIcon;
 	}
 	
 	/*
@@ -38,7 +35,7 @@ public enum Items
 		return type;
 	}
 	
-	public File getIcon()
+	public ImageIcon getIcon()
 	{
 		return icon;
 	}
